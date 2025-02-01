@@ -11,6 +11,10 @@ UPLOAD_FOLDER = "uploads"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 df = None  # Global dataframe to hold uploaded data
 
+@app.route('/')
+def home():
+    return "Eco Guard API is running. Use the available endpoints."
+
 @app.route('/upload', methods=['POST'])
 def upload_file():
     global df
